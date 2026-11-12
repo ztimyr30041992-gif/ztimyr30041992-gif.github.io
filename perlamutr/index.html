@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Перламутр — стоматологическая клиника в Алматы</title>
+<meta name="description" content="Стоматология «Перламутр»: лечение без боли, имплантация, ортодонтия, отбеливание. Онлайн-запись к врачу.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f9fb;--white:#fff;--ink:#0f2a3a;--muted:#5a6f7d;--line:#e2eaf0;--pri:#0b7a8a;--pri2:#0a6674;--soft:#e4f4f5;--mint:#3cc6b0;--warm:#ffb86b;--r:24px;--sh:0 20px 50px -24px rgba(15,42,58,.22)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:Onest,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer;border:0;background:none}
+.container{width:min(1240px,92%);margin:0 auto}
+:focus-visible{outline:3px solid var(--mint);outline-offset:2px}
+section{padding:clamp(64px,9vw,120px) 0}
+.pill{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .9rem;border-radius:100px;background:var(--soft);color:var(--pri2);font-weight:600;font-size:.85rem}
+h2.t{font-size:clamp(2rem,4.2vw,3.3rem);line-height:1.1;letter-spacing:-.025em;margin:.9rem 0 .8rem;font-weight:700}
+h2.t span{color:var(--pri)}
+.sub{color:var(--muted);max-width:560px;font-size:1.05rem}
+.head{display:flex;justify-content:space-between;align-items:end;gap:2rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:1rem 1.6rem;border-radius:14px;font-weight:600;transition:.3s}
+.btn-pri{background:var(--pri);color:#fff;box-shadow:0 12px 26px -12px rgba(11,122,138,.7)}
+.btn-pri:hover{background:var(--pri2);transform:translateY(-2px)}
+.btn-out{border:1.5px solid var(--line);background:#fff}
+.btn-out:hover{border-color:var(--pri);color:var(--pri)}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
+/* topbar/header */
+.topbar{background:var(--ink);color:#cfe0e8;font-size:.85rem}
+.topbar .container{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;flex-wrap:wrap}
+header{position:sticky;top:0;z-index:40;background:rgba(246,249,251,.86);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
+header.scrolled{border-color:var(--line);box-shadow:0 8px 30px -20px rgba(15,42,58,.3)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:1.25rem;letter-spacing:-.02em}
+.logo svg{width:38px;height:38px}
+.nav ul{display:flex;gap:1.9rem;list-style:none;font-weight:500;color:var(--muted)}
+.nav ul a:hover{color:var(--pri)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:#fff}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);margin:4px auto;border-radius:2px}
+/* hero */
+.hero{padding:clamp(40px,6vw,80px) 0 clamp(60px,8vw,100px);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,#d7f1f1,transparent 65%);right:-200px;top:-200px;z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:3.5rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:1.04;letter-spacing:-.035em;font-weight:800;margin:1.2rem 0 1.3rem}
+.hero h1 span{color:var(--pri);position:relative;white-space:nowrap}
+.hero h1 span svg{position:absolute;left:0;bottom:-.12em;width:100%;height:.3em}
+.hero h1 span path{stroke-dasharray:400;stroke-dashoffset:400;animation:draw 1.4s .6s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero p{color:var(--muted);font-size:1.12rem;max-width:520px;margin-bottom:2rem}
+.hero-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.trust{display:flex;gap:1.6rem;margin-top:2.4rem;align-items:center;flex-wrap:wrap}
+.avatars{display:flex}
+.avatars img{width:44px;height:44px;border-radius:50%;border:3px solid var(--bg);object-fit:cover;margin-left:-12px}
+.avatars img:first-child{margin-left:0}
+.trust b{display:block;font-size:1.05rem}.trust small{color:var(--muted)}
+.stars{color:#f5a524;letter-spacing:2px}
+.hero-img{position:relative}
+.hero-img .main{border-radius:32px;overflow:hidden;aspect-ratio:4/4.3;box-shadow:var(--sh)}
+.hero-img .main img{width:100%;height:100%;object-fit:cover}
+.float{position:absolute;background:#fff;border-radius:18px;padding:.9rem 1.1rem;box-shadow:var(--sh);display:flex;gap:.8rem;align-items:center;animation:fl 6s ease-in-out infinite}
+.float .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:var(--soft);color:var(--pri);font-size:1.2rem}
+.float small{display:block;color:var(--muted);font-size:.8rem}
+.f1{left:-36px;top:12%}.f2{right:-24px;bottom:14%;animation-delay:-3s}
+@keyframes fl{50%{transform:translateY(-10px)}}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:var(--r);box-shadow:var(--sh);margin-top:-30px;position:relative}
+.stat{padding:1.8rem;text-align:center;border-right:1px solid var(--line)}
+.stat:last-child{border:0}
+.stat b{font-size:2.3rem;font-weight:800;color:var(--pri);display:block;line-height:1.1;letter-spacing:-.03em}
+.stat span{color:var(--muted);font-size:.92rem}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:2rem;transition:.4s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+.svc::after{content:"";position:absolute;inset:auto 0 0;height:4px;background:linear-gradient(90deg,var(--pri),var(--mint));transform:scaleX(0);transform-origin:left;transition:.5s}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--sh);border-color:transparent}
+.svc:hover::after{transform:none}
+.svc .ic{width:60px;height:60px;border-radius:18px;background:var(--soft);display:grid;place-items:center;margin-bottom:1.4rem;transition:.4s}
+.svc:hover .ic{background:var(--pri)}
+.svc .ic svg{width:30px;height:30px;stroke:var(--pri);transition:.4s}
+.svc:hover .ic svg{stroke:#fff}
+.svc h3{font-size:1.28rem;margin-bottom:.5rem}
+.svc p{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
+.svc .from{font-weight:700;color:var(--pri)}
+/* doctors */
+.docs{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.doc{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);transition:.4s}
+.doc:hover{box-shadow:var(--sh);transform:translateY(-4px)}
+.doc .ph{aspect-ratio:1/1.08;overflow:hidden;position:relative;background:#e9f1f4}
+.doc .ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:.7s}
+.doc:hover .ph img{transform:scale(1.06)}
+.doc .exp{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.95);padding:.35rem .8rem;border-radius:100px;font-size:.8rem;font-weight:600;color:var(--pri2)}
+.doc .info{padding:1.2rem 1.3rem 1.4rem}
+.doc h3{font-size:1.1rem}
+.doc p{color:var(--muted);font-size:.9rem}
+.doc .book{margin-top:1rem;width:100%;padding:.7rem;border-radius:12px;background:var(--soft);color:var(--pri2);font-weight:600;transition:.3s}
+.doc .book:hover{background:var(--pri);color:#fff}
+/* before after */
+.ba-wrap{display:grid;grid-template-columns:1fr 1.15fr;gap:4rem;align-items:center}
+.ba{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--sh);user-select:none;background:#f3d6cf}
+.ba svg{position:absolute;inset:0;width:100%;height:100%}
+.ba .before{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.ba .lbl{position:absolute;top:16px;padding:.35rem .85rem;border-radius:100px;font-size:.8rem;font-weight:700;background:rgba(255,255,255,.92);z-index:3}
+.ba .lbl.l{left:16px}.ba .lbl.r{right:16px;background:var(--pri);color:#fff}
+.ba .handle{position:absolute;top:0;bottom:0;left:var(--p,50%);width:3px;background:#fff;transform:translateX(-50%);z-index:2;pointer-events:none;box-shadow:0 0 10px rgba(0,0,0,.2)}
+.ba .handle::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--pri);font-weight:800;box-shadow:var(--sh)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
+.ba-cases{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.6rem 0}
+.ba-cases button{padding:.6rem 1.1rem;border-radius:12px;border:1.5px solid var(--line);background:#fff;font-weight:600;font-size:.92rem;transition:.25s}
+.ba-cases button.active{border-color:var(--pri);color:var(--pri);background:var(--soft)}
+.ba-note{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.ba-note div{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem 1.2rem}
+.ba-note b{display:block;font-size:1.3rem;color:var(--pri)}
+.ba-note span{font-size:.88rem;color:var(--muted)}
+/* prices */
+.prices{background:#fff;border-radius:32px;padding:clamp(1.4rem,3.5vw,3rem);box-shadow:var(--sh)}
+.ptabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.8rem}
+.ptab{padding:.75rem 1.2rem;border-radius:12px;background:var(--bg);font-weight:600;color:var(--muted);transition:.25s}
+.ptab:hover{color:var(--ink)}
+.ptab.active{background:var(--ink);color:#fff}
+.ppanel{display:none;animation:fade .5s}
+.ppanel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+.prow{display:flex;justify-content:space-between;gap:1rem;padding:1.05rem 0;border-bottom:1px dashed var(--line);align-items:baseline}
+.prow span{color:var(--ink)}
+.prow small{display:block;color:var(--muted);font-size:.85rem}
+.prow b{white-space:nowrap;font-weight:700}
+.pnote{margin-top:1.4rem;padding:1rem 1.2rem;border-radius:14px;background:var(--soft);color:var(--pri2);font-size:.92rem}
+/* faq */
+.faq-grid{display:grid;grid-template-columns:.9fr 1.3fr;gap:4rem}
+.acc{border-radius:18px;background:#fff;border:1px solid var(--line);margin-bottom:.8rem;overflow:hidden;transition:.3s}
+.acc.open{box-shadow:var(--sh);border-color:transparent}
+.acc button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.3rem 1.5rem;text-align:left;font-weight:600;font-size:1.05rem}
+.acc .pm{flex:none;width:32px;height:32px;border-radius:50%;background:var(--soft);position:relative;transition:.3s}
+.acc .pm::before,.acc .pm::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--pri);transform:translate(-50%,-50%);transition:.3s}
+.acc .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.acc.open .pm{background:var(--pri)}.acc.open .pm::before,.acc.open .pm::after{background:#fff}
+.acc.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.acc .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease}
+.acc.open .body{grid-template-rows:1fr}
+.acc .body>div{overflow:hidden}
+.acc .body p{padding:0 1.5rem 1.4rem;color:var(--muted)}
+.help{background:linear-gradient(140deg,var(--pri),#0d5a74);color:#fff;border-radius:var(--r);padding:2rem;margin-top:2rem}
+.help p{opacity:.85;margin:.5rem 0 1.2rem}
+.help .btn{background:#fff;color:var(--pri2)}
+/* booking */
+.booking{background:var(--ink);color:#fff;border-radius:36px;padding:clamp(1.4rem,4vw,3.6rem);display:grid;grid-template-columns:.85fr 1.3fr;gap:3rem;position:relative;overflow:hidden}
+.booking>*,.row2>*,.bk-form{min-width:0}
+.booking::before{content:"";position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(60,198,176,.3),transparent 65%);left:-180px;bottom:-220px}
+.booking h2.t span{color:var(--mint)}
+.booking .sub{color:#b7cad4}
+.bk-list{list-style:none;margin-top:2rem;display:grid;gap:.9rem}
+.bk-list li{display:flex;gap:.8rem;color:#d8e6ec}
+.bk-list li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:50%;background:rgba(60,198,176,.2);color:var(--mint);display:grid;place-items:center;font-size:.8rem;font-weight:800}
+.bk-form{background:#fff;color:var(--ink);border-radius:26px;padding:clamp(1.2rem,3vw,2rem);position:relative}
+.steps-ind{display:flex;gap:.4rem;margin-bottom:1.4rem}
+.steps-ind i{flex:1;height:5px;border-radius:5px;background:var(--line);transition:.4s}
+.steps-ind i.on{background:var(--pri)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f{margin-bottom:1rem}
+.f label,.flabel{display:block;font-size:.88rem;font-weight:600;margin-bottom:.4rem}
+.f input,.f select{width:100%;padding:.9rem 1rem;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);transition:.25s;appearance:none}
+.f select{background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6f7d' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 1rem center}
+.f input:focus,.f select:focus{outline:none;border-color:var(--pri);background-color:#fff}
+.f.bad input,.f.bad select{border-color:#d64545}
+.f .err{color:#c23434;font-size:.8rem;min-height:1.1em;display:block;margin-top:.25rem}
+.cal{margin-bottom:1rem}
+.cal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.6rem}
+.cal-head b{text-transform:capitalize}
+.cal-nav{display:flex;gap:.3rem}
+.cal-nav button{width:34px;height:34px;border-radius:10px;border:1.5px solid var(--line)}
+.cal-nav button:disabled{opacity:.35;cursor:default}
+.days{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.4rem;scrollbar-width:thin;scroll-behavior:smooth}
+.day{flex:none;width:62px;padding:.6rem 0;border-radius:14px;border:1.5px solid var(--line);text-align:center;transition:.25s;background:#fff}
+.day small{display:block;font-size:.72rem;color:var(--muted);text-transform:uppercase}
+.day b{font-size:1.15rem}
+.day:hover:not(:disabled){border-color:var(--pri)}
+.day.sel{background:var(--pri);border-color:var(--pri);color:#fff}.day.sel small{color:#d5f0f2}
+.day:disabled{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+.slots{display:grid;grid-template-columns:repeat(6,1fr);gap:.45rem;margin-bottom:1rem}
+.slot{padding:.6rem 0;border-radius:10px;border:1.5px solid var(--line);font-weight:600;font-size:.9rem;transition:.2s;background:#fff}
+.slot:hover:not(:disabled){border-color:var(--pri);color:var(--pri)}
+.slot.sel{background:var(--pri);color:#fff;border-color:var(--pri)}
+.slot:disabled{background:var(--bg);color:#a5b3bc;cursor:not-allowed;text-decoration:line-through}
+.summary{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding-top:1rem;border-top:1px solid var(--line)}
+.summary small{color:var(--muted);display:block}
+.done{display:none;text-align:center;padding:2rem 0}
+.done .ok{width:76px;height:76px;border-radius:50%;background:var(--soft);color:var(--pri);font-size:2rem;display:grid;place-items:center;margin:0 auto 1rem;animation:pop .5s}
+@keyframes pop{from{transform:scale(0)}}
+.bk-form.sent .bk-body{display:none}.bk-form.sent .done{display:block}
+/* map */
+.map-wrap{display:grid;grid-template-columns:1.6fr 1fr;gap:1.3rem}
+.map{border-radius:var(--r);overflow:hidden;position:relative;min-height:380px;background:#e8eef1;box-shadow:var(--sh)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:52%;top:46%;transform:translate(-50%,-100%)}
+.pin .p{width:54px;height:54px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--pri);display:grid;place-items:center;box-shadow:0 10px 20px -6px rgba(11,122,138,.7)}
+.pin .p span{transform:rotate(45deg);color:#fff;font-weight:800}
+.pin::after{content:"";position:absolute;left:50%;bottom:-14px;width:18px;height:18px;border-radius:50%;background:rgba(11,122,138,.35);transform:translateX(-50%);animation:pulse 2s infinite}
+@keyframes pulse{to{transform:translateX(-50%) scale(3.2);opacity:0}}
+.map .tagm{position:absolute;left:52%;top:46%;transform:translate(36px,-100%);background:#fff;border-radius:12px;padding:.5rem .8rem;font-weight:700;font-size:.85rem;box-shadow:var(--sh);white-space:nowrap}
+.addr{background:#fff;border-radius:var(--r);padding:2rem;border:1px solid var(--line);display:flex;flex-direction:column;gap:1.2rem}
+.addr .it{display:flex;gap:1rem}
+.addr .it i{flex:none;width:44px;height:44px;border-radius:12px;background:var(--soft);display:grid;place-items:center;font-style:normal}
+.addr small{color:var(--muted);display:block;font-size:.85rem}
+footer{background:var(--ink);color:#c4d4dc;padding:4rem 0 2rem;margin-top:clamp(64px,9vw,120px)}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:2.5rem}
+footer .logo{color:#fff}
+footer h4{color:#fff;margin-bottom:1rem;font-size:1rem}
+footer ul{list-style:none;display:grid;gap:.5rem;font-size:.95rem}
+footer a:hover{color:#fff}
+.fbot{border-top:1px solid rgba(255,255,255,.1);margin-top:3rem;padding-top:1.5rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:#93a9b4}
+.mob-cta{display:none}
+/* responsive */
+@media(max-width:1080px){.docs{grid-template-columns:repeat(2,1fr)}.fgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:920px){
+ .nav ul{position:fixed;top:76px;left:0;right:0;flex-direction:column;gap:0;background:#fff;padding:.5rem 4% 1rem;border-bottom:1px solid var(--line);transform:translateY(-8px);opacity:0;pointer-events:none;transition:.3s}
+ .nav ul.open{opacity:1;transform:none;pointer-events:auto}
+ .nav ul li{padding:.9rem 0;border-bottom:1px solid var(--line)}
+ .burger{display:block}.nav .btn{display:none}
+ .hero-grid,.ba-wrap,.faq-grid,.booking,.map-wrap{grid-template-columns:1fr}
+ .svc-grid{grid-template-columns:1fr 1fr}
+ .stats{grid-template-columns:1fr 1fr;margin-top:1rem}
+ .stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+ .f1{left:10px}.f2{right:10px}
+ .topbar .hide-m{display:none}
+}
+@media(max-width:560px){
+ .svc-grid,.docs{grid-template-columns:1fr}
+ .docs{grid-template-columns:1fr 1fr;gap:.8rem}
+ .doc .info{padding:.9rem}.doc h3{font-size:.98rem}.doc p{font-size:.82rem}.doc .exp{font-size:.7rem;left:8px;bottom:8px}
+ .slots{grid-template-columns:repeat(4,1fr)}
+ .row2{grid-template-columns:1fr}
+ .stat{padding:1.2rem .6rem}.stat b{font-size:1.8rem}
+ .float{padding:.6rem .8rem}.float .ic{width:34px;height:34px}.f1{top:6%}.f2{bottom:6%}
+ .fgrid{grid-template-columns:1fr}
+ .mob-cta{display:flex;transform:translateY(150%);opacity:0;visibility:hidden;transition:transform .4s,opacity .4s,visibility .4s;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;justify-content:center;box-shadow:0 14px 30px -10px rgba(11,122,138,.8)}
+ .mob-cta.show{transform:none;opacity:1;visibility:visible}
+ footer{padding-bottom:6rem}
+ .map .tagm{transform:translate(-50%,14px)}
+ .hero-ctas .btn{flex:1 1 100%}
+
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.hero h1 span path{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>📍 Алматы, ул. Жандосова, 58</span><span class="hide-m">Пн–Сб 08:00–21:00 · Вс — выходной</span><a href="tel:+77270000001">+7 727 000 00 01</a></div></div>
+<header id="hdr">
+ <div class="container nav">
+  <a href="#top" class="logo" aria-label="Перламутр — на главную">
+   <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12" fill="#0b7a8a"/><path d="M12 13c0-3 3.5-4 5.5-3s3 1 5 0 5.5 0 5.5 3c0 4-1.5 6-2.2 10-.6 3.5-1.1 7-3 7s-1.7-5.5-3.3-5.5S16.7 30 14.7 30s-2.4-3.5-3-7C11 19 12 17 12 13z" fill="#fff"/></svg>
+   Перламутр
+  </a>
+  <ul id="nav"><li><a href="#services">Услуги</a></li><li><a href="#doctors">Врачи</a></li><li><a href="#results">Результаты</a></li><li><a href="#prices">Цены</a></li><li><a href="#faq">Вопросы</a></li><li><a href="#contacts">Контакты</a></li></ul>
+  <div style="display:flex;gap:.6rem;align-items:center"><a href="#booking" class="btn btn-pri">Записаться</a><button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button></div>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <span class="pill">✦ Лечение без боли и страха</span>
+   <h1>Здоровая улыбка <span>без стресса<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M3 14 Q 150 0 297 12" fill="none" stroke="#3cc6b0" stroke-width="5" stroke-linecap="round"/></svg></span> и очередей</h1>
+   <p>Современная клиника полного цикла: от профессиональной гигиены до имплантации за один день. Честный план лечения и фиксированная цена ещё до начала работы.</p>
+   <div class="hero-ctas"><a href="#booking" class="btn btn-pri">Записаться онлайн</a><a href="#prices" class="btn btn-out">Смотреть цены</a></div>
+   <div class="trust">
+    <div class="avatars">
+     <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=120&h=120&fit=crop&q=70&auto=format" alt="">
+     <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=120&h=120&fit=crop&q=70&auto=format" alt="">
+     <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=120&h=120&fit=crop&q=70&auto=format" alt="">
+    </div>
+    <div><span class="stars" aria-label="Рейтинг 4,9 из 5">★★★★★</span><b>4,9 из 5</b><small>1 280 отзывов пациентов</small></div>
+   </div>
+  </div>
+  <div class="hero-img">
+   <div class="main"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1100&q=75&auto=format&fit=crop" alt="Светлый стоматологический кабинет клиники"></div>
+   <div class="float f1"><div class="ic">🛡</div><div><b>Гарантия 5 лет</b><small>на импланты и коронки</small></div></div>
+   <div class="float f2"><div class="ic">⏱</div><div><b>Без очередей</b><small>приём точно по времени</small></div></div>
+  </div>
+ </div>
+</section>
+
+<div class="container"><div class="stats reveal">
+ <div class="stat"><b data-count="12">0</b><span>лет работы</span></div>
+ <div class="stat"><b data-count="18">0</b><span>врачей-специалистов</span></div>
+ <div class="stat"><b data-count="24" data-suffix=" 000">0</b><span>довольных пациентов</span></div>
+ <div class="stat"><b data-count="98" data-suffix="%">0</b><span>рекомендуют нас</span></div>
+</div></div>
+
+<section id="services">
+ <div class="container">
+  <div class="head"><div class="reveal"><span class="pill">Услуги</span><h2 class="t">Всё для здоровья зубов <span>в одной клинике</span></h2></div><p class="sub reveal d1">Диагностика на 3D-томографе, микроскоп для лечения каналов и седация для тех, кто боится стоматолога.</p></div>
+  <div class="svc-grid">
+   <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 8 .4 3 1 5.5 2.5 5.5S9 18 12 18s3 3 4.5 3 2.1-2.5 2.5-5.5c.5-3.5 2-5 2-8C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg></div><h3>Лечение кариеса</h3><p>Под микроскопом и с анестезией нового поколения. Пломбы, которые не отличить от эмали.</p><span class="from">от 18 000 ₸</span></article>
+   <article class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.4 7.2 17l.9-5.4L4.2 7.7l5.4-.8z"/><path d="M5 21h14"/></svg></div><h3>Отбеливание</h3><p>Фотоотбеливание: до 8 тонов светлее за одно посещение, без чувствительности.</p><span class="from">от 85 000 ₸</span></article>
+   <article class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M8 3h8l-1 7H9z"/><path d="M10 10v4M14 10v4M9 14h6l-1 7h-4z"/></svg></div><h3>Имплантация</h3><p>Импланты премиум-класса с пожизненной гарантией производителя. Протокол «за один день».</p><span class="from">от 280 000 ₸</span></article>
+   <article class="svc reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M3 12h18"/><rect x="4" y="9" width="4" height="6" rx="1"/><rect x="10" y="9" width="4" height="6" rx="1"/><rect x="16" y="9" width="4" height="6" rx="1"/></svg></div><h3>Брекеты и элайнеры</h3><p>Исправляем прикус у детей и взрослых: металлические, керамические брекеты и прозрачные капы.</p><span class="from">от 350 000 ₸</span></article>
+   <article class="svc reveal d1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Гигиена</h3><p>Ультразвук, Air Flow и полировка. Удаляем налёт и камень за 60 минут бережно и без боли.</p><span class="from">от 25 000 ₸</span></article>
+   <article class="svc reveal d2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div><h3>Детская стоматология</h3><p>Игровая комната, мультики на потолке и врачи, которые умеют подружиться с ребёнком.</p><span class="from">от 12 000 ₸</span></article>
+  </div>
+ </div>
+</section>
+
+<section id="doctors" style="padding-top:0">
+ <div class="container">
+  <div class="head"><div class="reveal"><span class="pill">Команда</span><h2 class="t">Врачи, которым <span>доверяют</span></h2></div><p class="sub reveal d1">Каждый врач ежегодно проходит обучение в Европе и Корее. Средний стаж в команде — 11 лет.</p></div>
+  <div class="docs">
+   <article class="doc reveal"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&q=70&auto=format&fit=crop" alt="Врач Алия Нурланова"><span class="exp">Стаж 16 лет</span></div><div class="info"><h3>Алия Нурланова</h3><p>Главный врач, терапевт</p><button class="book" data-doc="Алия Нурланова">Записаться</button></div></article>
+   <article class="doc reveal d1"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&q=70&auto=format&fit=crop" alt="Врач Тимур Ахметов"><span class="exp">Стаж 12 лет</span></div><div class="info"><h3>Тимур Ахметов</h3><p>Хирург-имплантолог</p><button class="book" data-doc="Тимур Ахметов">Записаться</button></div></article>
+   <article class="doc reveal d2"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=600&q=70&auto=format&fit=crop" alt="Врач Дана Серикова"><span class="exp">Стаж 9 лет</span></div><div class="info"><h3>Дана Серикова</h3><p>Ортодонт</p><button class="book" data-doc="Дана Серикова">Записаться</button></div></article>
+   <article class="doc reveal d3"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&q=70&auto=format&fit=crop" alt="Врач Руслан Касенов"><span class="exp">Стаж 8 лет</span></div><div class="info"><h3>Руслан Касенов</h3><p>Детский стоматолог</p><button class="book" data-doc="Руслан Касенов">Записаться</button></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="results" style="background:#fff">
+ <div class="container ba-wrap">
+  <div class="reveal">
+   <span class="pill">До и после</span>
+   <h2 class="t">Результаты, которые <span>видно сразу</span></h2>
+   <p class="sub">Потяните ползунок, чтобы сравнить. Фото пациентов публикуем только с их согласия, здесь — иллюстрации.</p>
+   <div class="ba-cases" role="group" aria-label="Выбор случая">
+    <button class="active" data-case="whiten">Отбеливание</button><button data-case="align">Элайнеры</button><button data-case="veneer">Виниры</button>
+   </div>
+   <div class="ba-note"><div><b id="baA">8 тонов</b><span id="baAt">светлее после 1 визита</span></div><div><b id="baB">90 минут</b><span id="baBt">длительность процедуры</span></div></div>
+  </div>
+  <div class="ba reveal d1" id="ba">
+   <svg viewBox="0 0 400 300" class="after" id="svgAfter" aria-hidden="true"></svg>
+   <svg viewBox="0 0 400 300" class="before" id="svgBefore" aria-hidden="true"></svg>
+   <span class="lbl l">До</span><span class="lbl r">После</span>
+   <div class="handle"></div>
+   <input type="range" min="0" max="100" value="50" id="baRange" aria-label="Сравнение до и после">
+  </div>
+ </div>
+</section>
+
+<section id="prices">
+ <div class="container">
+  <div class="head"><div class="reveal"><span class="pill">Цены</span><h2 class="t">Прозрачные цены <span>без сюрпризов</span></h2></div><p class="sub reveal d1">Итоговую стоимость фиксируем в плане лечения после консультации. Рассрочка 0% на 12 месяцев.</p></div>
+  <div class="prices reveal">
+   <div class="ptabs" role="tablist" id="ptabs"></div>
+   <div id="ppanels"></div>
+   <div class="pnote">🎁 Консультация и план лечения — бесплатно при записи через сайт.</div>
+  </div>
+ </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+ <div class="container faq-grid">
+  <div class="reveal">
+   <span class="pill">Вопросы</span><h2 class="t">Часто <span>спрашивают</span></h2>
+   <p class="sub">Не нашли ответ? Администратор ответит в WhatsApp в течение 10 минут.</p>
+   <div class="help"><b style="font-size:1.2rem">Боитесь стоматолога?</b><p>Мы предлагаем лечение во сне (седацию) под контролем анестезиолога.</p><a href="#booking" class="btn">Узнать подробнее</a></div>
+  </div>
+  <div id="faqList" class="reveal d1"></div>
+ </div>
+</section>
+
+<section id="booking" style="padding-top:0">
+ <div class="container">
+  <div class="booking reveal">
+   <div style="position:relative">
+    <span class="pill" style="background:rgba(60,198,176,.18);color:var(--mint)">Онлайн-запись</span>
+    <h2 class="t">Запишитесь <span>за 1 минуту</span></h2>
+    <p class="sub">Выберите услугу, врача и удобное время. Администратор позвонит, чтобы подтвердить визит.</p>
+    <ul class="bk-list"><li>Бесплатная консультация при записи онлайн</li><li>Напомним о визите за день по SMS</li><li>Перенести запись можно в один клик</li></ul>
+   </div>
+   <form class="bk-form" id="bkForm" novalidate>
+    <div class="bk-body">
+     <div class="steps-ind" aria-hidden="true"><i id="si1"></i><i id="si2"></i><i id="si3"></i></div>
+     <div class="row2">
+      <div class="f"><label for="bService">Услуга</label><select id="bService"><option value="">Выберите услугу</option><option>Консультация</option><option>Лечение кариеса</option><option>Профессиональная гигиена</option><option>Отбеливание</option><option>Имплантация</option><option>Ортодонтия</option><option>Детский приём</option></select><span class="err" id="eService"></span></div>
+      <div class="f"><label for="bDoctor">Врач</label><select id="bDoctor"><option value="">Любой свободный врач</option><option>Алия Нурланова</option><option>Тимур Ахметов</option><option>Дана Серикова</option><option>Руслан Касенов</option></select><span class="err"></span></div>
+     </div>
+     <div class="cal">
+      <div class="cal-head"><span class="flabel" style="margin:0">Дата визита</span><div style="display:flex;gap:.8rem;align-items:center"><b id="monthLbl"></b><div class="cal-nav"><button type="button" id="dPrev" aria-label="Предыдущие дни">‹</button><button type="button" id="dNext" aria-label="Следующие дни">›</button></div></div></div>
+      <div class="days" id="days" role="listbox" aria-label="Выбор даты"></div>
+      <span class="err" id="eDate" style="color:#c23434;font-size:.8rem;display:block;min-height:1.1em"></span>
+     </div>
+     <span class="flabel">Время</span>
+     <div class="slots" id="slots"></div>
+     <span class="err" id="eTime" style="color:#c23434;font-size:.8rem;display:block;min-height:1.1em;margin-top:-.6rem;margin-bottom:.4rem"></span>
+     <div class="row2">
+      <div class="f"><label for="bName">Ваше имя</label><input id="bName" autocomplete="name" placeholder="Айгерим"><span class="err" id="eName"></span></div>
+      <div class="f"><label for="bPhone">Телефон</label><input id="bPhone" type="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__"><span class="err" id="ePhone"></span></div>
+     </div>
+     <div class="summary"><div><small>Ваш визит</small><b id="bSum">Выберите дату и время</b></div><button class="btn btn-pri" type="submit">Записаться</button></div>
+    </div>
+    <div class="done" role="status"><div class="ok">✓</div><h3 style="font-size:1.5rem">Вы записаны!</h3><p id="doneTxt" style="color:var(--muted);margin:.5rem 0 1.4rem"></p><button type="button" class="btn btn-out" id="bAgain">Новая запись</button></div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section id="contacts" style="padding-top:0;padding-bottom:0">
+ <div class="container">
+  <div class="head reveal"><div><span class="pill">Контакты</span><h2 class="t">Как нас <span>найти</span></h2></div></div>
+  <div class="map-wrap">
+   <div class="map reveal" role="img" aria-label="Схема проезда: клиника на улице Жандосова, 58">
+    <svg viewBox="0 0 800 420" preserveAspectRatio="xMidYMid slice"><rect width="800" height="420" fill="#e8eef1"/><g fill="#dbe6eb"><rect x="30" y="30" width="160" height="110" rx="10"/><rect x="230" y="30" width="200" height="110" rx="10"/><rect x="470" y="30" width="130" height="110" rx="10"/><rect x="640" y="30" width="140" height="110" rx="10"/><rect x="30" y="190" width="160" height="200" rx="10"/><rect x="230" y="190" width="140" height="80" rx="10"/><rect x="470" y="270" width="300" height="120" rx="10"/></g><rect x="390" y="180" width="60" height="70" rx="10" fill="#cfe9d8"/><circle cx="300" cy="330" r="50" fill="#cfe9d8"/><g stroke="#fff" stroke-width="22" fill="none"><path d="M0 165h800"/><path d="M210 0v420"/><path d="M450 0v420"/><path d="M620 0v260"/><path d="M450 245h350"/></g><path d="M0 165h800" stroke="#ffd79a" stroke-width="6"/><text x="20" y="160" font-family="Onest" font-size="13" fill="#8aa0ac">ул. Жандосова</text><text x="215" y="410" font-family="Onest" font-size="13" fill="#8aa0ac" transform="rotate(-90 215 410)">пр. Гагарина</text><path d="M120 400 C200 300 330 260 420 190" stroke="#0b7a8a" stroke-width="4" stroke-dasharray="8 8" fill="none"/></svg>
+    <div class="pin"><div class="p"><span>П</span></div></div>
+    <div class="tagm">Перламутр · вход со двора</div>
+   </div>
+   <div class="addr reveal d1">
+    <div class="it"><i>📍</i><div><b>ул. Жандосова, 58</b><small>Алматы, Бостандыкский район, 2 этаж</small></div></div>
+    <div class="it"><i>🕘</i><div><b>Пн–Сб 08:00–21:00</b><small>Воскресенье — выходной</small></div></div>
+    <div class="it"><i>📞</i><div><b><a href="tel:+77270000001">+7 727 000 00 01</a></b><small>WhatsApp и звонки</small></div></div>
+    <div class="it"><i>🅿️</i><div><b>Бесплатная парковка</b><small>12 мест во дворе клиники</small></div></div>
+    <a href="#booking" class="btn btn-pri">Записаться на приём</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="fgrid">
+   <div><a href="#top" class="logo">Перламутр</a><p style="margin-top:1rem;max-width:300px;font-size:.93rem">Стоматологическая клиника полного цикла в Алматы. Лицензия № 00000 (демо).</p></div>
+   <div><h4>Пациентам</h4><ul><li><a href="#services">Услуги</a></li><li><a href="#prices">Цены</a></li><li><a href="#faq">Вопросы</a></li></ul></div>
+   <div><h4>Клиника</h4><ul><li><a href="#doctors">Врачи</a></li><li><a href="#results">Результаты</a></li><li><a href="#contacts">Контакты</a></li></ul></div>
+   <div><h4>Связаться</h4><ul><li><a href="tel:+77270000001">+7 727 000 00 01</a></li><li><a href="mailto:care@perlamutr.kz">care@perlamutr.kz</a></li></ul></div>
+  </div>
+  <div class="fbot"><span>© 2026 Клиника «Перламутр». Демо-сайт, бренд вымышлен.</span><span>Имеются противопоказания, необходима консультация специалиста.</span></div>
+ </div>
+</footer>
+<a href="#booking" class="btn btn-pri mob-cta" id="mobCta">Записаться онлайн</a>
+
+<script>
+const $=id=>document.getElementById(id);
+// header & nav
+addEventListener('scroll',()=>{$('hdr').classList.toggle('scrolled',scrollY>40);const bk=$('booking').getBoundingClientRect();$('mobCta').classList.toggle('show',scrollY>500&&(bk.top>innerHeight||bk.bottom<0))},{passive:true});
+$('burger').onclick=()=>{const o=$('nav').classList.toggle('open');$('burger').setAttribute('aria-expanded',o)};
+$('nav').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>$('nav').classList.remove('open')));
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+// counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,to=+el.dataset.count,suf=el.dataset.suffix||'',t0=performance.now();const st=t=>{const k=Math.min(1,(t-t0)/1500);el.textContent=Math.round(to*(1-Math.pow(1-k,3)))+suf;if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st);cio.unobserve(el)}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+// before/after art
+function smile(c){
+ const teethTop=[[118,32],[150,36],[184,40],[216,40],[250,36],[282,32]];
+ let t='';const x0=[86,118,152,186,220,254,288];
+ const w=[30,32,34,34,34,32,30];
+ for(let i=0;i<7;i++){const x=72+i*37+(i>2?2:0),h=i===3?62:i===2||i===4?58:52,dx=c.gap&&i===2?6:c.gap&&i===4?-5:0,rot=c.crooked?[-6,4,-8,0,7,-4,5][i]:0;t+=`<rect x="${x+dx}" y="${132}" width="34" height="${h}" rx="12" fill="url(#tg${c.id})" stroke="${c.edge}" stroke-width="1.5" transform="rotate(${rot} ${x+17} 160)"/>`}
+ for(let i=0;i<6;i++){const x=90+i*37,rot=c.crooked?[5,-6,3,-5,6,-3][i]:0;t+=`<rect x="${x}" y="196" width="33" height="40" rx="11" fill="url(#tg${c.id})" stroke="${c.edge}" stroke-width="1.5" transform="rotate(${rot} ${x+16} 210)"/>`}
+ return `<defs><linearGradient id="tg${c.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c.t1}"/><stop offset="1" stop-color="${c.t2}"/></linearGradient><clipPath id="m${c.id}"><path d="M60 150 Q200 95 340 150 Q320 250 200 262 Q80 250 60 150z"/></clipPath><linearGradient id="bg${c.id}" x1="0" x2="1"><stop offset="0" stop-color="${c.bg1}"/><stop offset="1" stop-color="${c.bg2}"/></linearGradient></defs>
+ <rect width="400" height="300" fill="url(#bg${c.id})"/>
+ <path d="M30 150 Q200 60 370 150 Q340 290 200 296 Q60 290 30 150z" fill="#d98c86"/>
+ <path d="M60 150 Q200 95 340 150 Q320 250 200 262 Q80 250 60 150z" fill="#5a1f26"/>
+ <g clip-path="url(#m${c.id})"><path d="M60 118 Q200 108 340 118 L340 148 Q200 128 60 148z" fill="#e48e95"/>${t}<ellipse cx="200" cy="262" rx="110" ry="22" fill="#b5545e" opacity=".8"/></g>
+ <path d="M30 150 Q120 128 200 136 Q280 128 370 150 Q300 110 200 118 Q100 110 30 150z" fill="#c9726e"/>
+ <path d="M60 150 Q200 95 340 150" fill="none" stroke="#b4605c" stroke-width="4"/>`;
+}
+const cases={
+ whiten:{a:['8 тонов','светлее после 1 визита'],b:['90 минут','длительность процедуры'],before:{t1:'#e7cf8e',t2:'#c9a965',edge:'#b5964f'},after:{t1:'#ffffff',t2:'#eef4f7',edge:'#d6e2e8'}},
+ align:{a:['11 месяцев','лечение элайнерами'],b:['22 капы','прозрачные, незаметные'],before:{t1:'#f6efe2',t2:'#e2d6c0',edge:'#cbbd9f',crooked:1},after:{t1:'#fdfdfb',t2:'#efefe8',edge:'#dcdcd2'}},
+ veneer:{a:['8 виниров','керамика E-max'],b:['2 визита','от слепка до улыбки'],before:{t1:'#ebdcb5',t2:'#c4ad78',edge:'#ad9660',gap:1},after:{t1:'#ffffff',t2:'#f1f6f8',edge:'#d9e4ea'}}
+};
+function setCase(k){const c=cases[k];$('svgBefore').innerHTML=smile({...c.before,id:'b',bg1:'#f2d3cb',bg2:'#ead0c6'});$('svgAfter').innerHTML=smile({...c.after,id:'a',bg1:'#e2f2f2',bg2:'#d4ecee'});$('baA').textContent=c.a[0];$('baAt').textContent=c.a[1];$('baB').textContent=c.b[0];$('baBt').textContent=c.b[1]}
+setCase('whiten');
+document.querySelectorAll('.ba-cases button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.ba-cases button').forEach(x=>x.classList.remove('active'));b.classList.add('active');setCase(b.dataset.case)});
+$('baRange').addEventListener('input',e=>$('ba').style.setProperty('--p',e.target.value+'%'));
+// teaser animation once visible
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();let t0=performance.now();const an=t=>{const k=(t-t0)/1600;if(k>1){$('ba').style.setProperty('--p','50%');return}const v=50+Math.sin(k*Math.PI*2)*22;$('ba').style.setProperty('--p',v+'%');$('baRange').value=v;requestAnimationFrame(an)};requestAnimationFrame(an)}},{threshold:.6}).observe($('ba'));
+
+// prices
+const prices={
+ 'Терапия':[['Консультация и план лечения','при записи через сайт','Бесплатно'],['Лечение поверхностного кариеса','анестезия и пломба включены','18 000 ₸'],['Лечение среднего кариеса','светоотверждаемая пломба','24 000 ₸'],['Лечение каналов под микроскопом','1 канал','45 000 ₸'],['Художественная реставрация','восстановление формы зуба','38 000 ₸']],
+ 'Гигиена':[['Профессиональная гигиена','ультразвук, Air Flow, полировка','25 000 ₸'],['Гигиена для детей','до 14 лет','15 000 ₸'],['Фторирование','все зубы','8 000 ₸'],['Отбеливание в клинике','1 визит, 90 минут','85 000 ₸'],['Домашнее отбеливание','индивидуальные капы и гель','55 000 ₸']],
+ 'Имплантация':[['3D-томография челюсти','с описанием','12 000 ₸'],['Имплант стандарт-класса','под ключ, с коронкой','280 000 ₸'],['Имплант премиум-класса','пожизненная гарантия производителя','420 000 ₸'],['Синус-лифтинг','закрытый','120 000 ₸'],['Удаление зуба мудрости','сложное','35 000 ₸']],
+ 'Ортодонтия':[['Консультация ортодонта','со снимками и планом','10 000 ₸'],['Металлические брекеты','одна челюсть','350 000 ₸'],['Керамические брекеты','одна челюсть','480 000 ₸'],['Элайнеры','полный курс','от 950 000 ₸'],['Ретейнер','после лечения','40 000 ₸']],
+ 'Эстетика':[['Керамический винир E-max','1 зуб','180 000 ₸'],['Композитный винир','1 зуб','65 000 ₸'],['Цифровой дизайн улыбки','3D-модель и примерка','30 000 ₸'],['Циркониевая коронка','1 зуб','150 000 ₸']]
+};
+const keys=Object.keys(prices);
+$('ptabs').innerHTML=keys.map((k,i)=>`<button class="ptab${i?'':' active'}" role="tab" id="pt${i}" aria-controls="pp${i}" aria-selected="${!i}">${k}</button>`).join('');
+$('ppanels').innerHTML=keys.map((k,i)=>`<div class="ppanel${i?'':' active'}" role="tabpanel" id="pp${i}" aria-labelledby="pt${i}">${prices[k].map(r=>`<div class="prow"><span>${r[0]}<small>${r[1]}</small></span><b>${r[2]}</b></div>`).join('')}</div>`).join('');
+$('ptabs').addEventListener('click',e=>{const b=e.target.closest('.ptab');if(!b)return;const i=b.id.slice(2);document.querySelectorAll('.ptab').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-selected',x===b)});document.querySelectorAll('.ppanel').forEach(p=>p.classList.toggle('active',p.id==='pp'+i))});
+
+// faq
+const faq=[['Больно ли лечить зубы?','Нет. Мы используем современные анестетики и компьютерную анестезию — укол практически не чувствуется. Для тревожных пациентов есть лечение во сне.'],['Сколько стоит первичный приём?','Консультация с осмотром и планом лечения бесплатна при записи через сайт. Если нужен снимок, он стоит от 3 000 ₸.'],['Есть ли рассрочка?','Да, рассрочка 0% до 12 месяцев через банки-партнёры. Оформление занимает 10 минут прямо в клинике.'],['Какая гарантия на лечение?','На пломбы — 2 года, на коронки и импланты — 5 лет. Гарантия прописана в договоре.'],['Принимаете ли детей?','Да, с 3 лет. Детский кабинет оформлен как игровая комната, а врачи умеют находить подход к малышам.'],['Можно ли перенести запись?','Конечно. Позвоните или напишите в WhatsApp не позднее чем за 3 часа до визита.']];
+$('faqList').innerHTML=faq.map((f,i)=>`<div class="acc${i?'':' open'}"><button aria-expanded="${!i}" aria-controls="fa${i}" id="fq${i}"><span>${f[0]}</span><span class="pm" aria-hidden="true"></span></button><div class="body" id="fa${i}" role="region" aria-labelledby="fq${i}"><div><p>${f[1]}</p></div></div></div>`).join('');
+$('faqList').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const a=b.parentElement,o=!a.classList.contains('open');document.querySelectorAll('.acc').forEach(x=>{x.classList.remove('open');x.firstElementChild.setAttribute('aria-expanded',false)});if(o){a.classList.add('open');b.setAttribute('aria-expanded',true)}});
+
+// booking
+const bk={date:null,time:null};
+const wd=['вс','пн','вт','ср','чт','пт','сб'],mon=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],monN=['январь','февраль','март','апрель','май','июнь','июль','август','сентябрь','октябрь','ноябрь','декабрь'];
+const today=new Date();today.setHours(0,0,0,0);
+const dates=[...Array(21)].map((_,i)=>{const d=new Date(today);d.setDate(d.getDate()+i);return d});
+$('days').innerHTML=dates.map((d,i)=>`<button type="button" class="day" role="option" aria-selected="false" data-i="${i}" ${d.getDay()===0?'disabled aria-disabled="true" title="Выходной"':''}><small>${i===0?'сег':i===1?'зав':wd[d.getDay()]}</small><b>${d.getDate()}</b></button>`).join('');
+const updMonth=()=>{const dl=$('days'),first=dl.children[Math.round(dl.scrollLeft/70)]||dl.children[0];$('monthLbl').textContent=monN[dates[first.dataset.i].getMonth()]+' '+dates[first.dataset.i].getFullYear()};
+$('days').addEventListener('scroll',()=>{updMonth();$('dPrev').disabled=$('days').scrollLeft<5;$('dNext').disabled=$('days').scrollLeft+$('days').clientWidth>=$('days').scrollWidth-5},{passive:true});
+updMonth();$('dPrev').disabled=true;
+$('dPrev').onclick=()=>$('days').scrollBy({left:-280});$('dNext').onclick=()=>$('days').scrollBy({left:280});
+const times=['09:00','10:00','11:00','12:00','13:30','14:30','15:30','16:30','17:30','18:30','19:30','20:00'];
+function renderSlots(){
+ const d=bk.date?dates[bk.date]:null,seed=d?d.getDate()*7+d.getMonth():0,now=new Date();
+ $('slots').innerHTML=times.map((t,i)=>{let dis=!d||((seed+i*3)%5===0);if(d&&bk.date==0){const [h,m]=t.split(':');if(+h*60+ +m<=now.getHours()*60+now.getMinutes()+60)dis=true}return `<button type="button" class="slot${bk.time===t&&!dis?' sel':''}" ${dis?'disabled':''} data-t="${t}">${t}</button>`}).join('');
+}
+renderSlots();
+$('days').addEventListener('click',e=>{const b=e.target.closest('.day');if(!b||b.disabled)return;document.querySelectorAll('.day').forEach(x=>{x.classList.remove('sel');x.setAttribute('aria-selected',false)});b.classList.add('sel');b.setAttribute('aria-selected',true);bk.date=b.dataset.i;bk.time=null;$('eDate').textContent='';renderSlots();updSum()});
+$('slots').addEventListener('click',e=>{const b=e.target.closest('.slot');if(!b||b.disabled)return;bk.time=b.dataset.t;$('eTime').textContent='';renderSlots();updSum()});
+function updSum(){const d=bk.date!==null?dates[bk.date]:null;$('bSum').textContent=d?`${d.getDate()} ${mon[d.getMonth()]}, ${wd[d.getDay()]}${bk.time?' в '+bk.time:' — выберите время'}`:'Выберите дату и время';
+ $('si1').classList.toggle('on',!!$('bService').value);$('si2').classList.toggle('on',!!(d&&bk.time));$('si3').classList.toggle('on',$('bName').value.trim().length>1&&$('bPhone').value.replace(/\D/g,'').length===11)}
+['bService','bDoctor','bName','bPhone'].forEach(id=>$(id).addEventListener('input',updSum));
+const maskPhone=(el,e)=>{if(e&&e.inputType&&e.inputType.startsWith('delete'))return;const v=el.value;let d=v.replace(/\D/g,'');if(v.trim().startsWith('+7'))d=d.slice(1);else if(d.length>10&&/^[78]/.test(d))d=d.slice(1);d=d.slice(0,10);if(!d){el.value='';return}let o='+7 ('+d.slice(0,3);if(d.length>=3)o+=') '+d.slice(3,6);if(d.length>=6)o+='-'+d.slice(6,8);if(d.length>=8)o+='-'+d.slice(8,10);el.value=o};
+$('bPhone').addEventListener('input',e=>{maskPhone(e.target,e);updSum()});
+document.querySelectorAll('.doc .book').forEach(b=>b.onclick=()=>{$('bDoctor').value=b.dataset.doc;updSum();$('booking').scrollIntoView({behavior:'smooth'})});
+// preselect nearest working day (tomorrow or later)
+{const b=[...document.querySelectorAll('.day')].find((x,i)=>i>0&&!x.disabled);b&&b.click();$('days').scrollLeft=0}
+const setErr=(id,eid,m)=>{$(eid).textContent=m;if($(id))$(id).closest('.f')?.classList.toggle('bad',!!m);return !m};
+$('bkForm').onsubmit=e=>{e.preventDefault();
+ const ok=[setErr('bService','eService',$('bService').value?'':'Выберите услугу'),setErr(null,'eDate',bk.date!==null?'':'Выберите дату'),setErr(null,'eTime',bk.time?'':'Выберите время'),setErr('bName','eName',$('bName').value.trim().length>1?'':'Укажите имя'),setErr('bPhone','ePhone',$('bPhone').value.replace(/\D/g,'').length===11?'':'Введите номер полностью')].every(Boolean);
+ if(!ok)return;const d=dates[bk.date];
+ $('doneTxt').textContent=`${$('bName').value.trim()}, ждём вас ${d.getDate()} ${mon[d.getMonth()]} в ${bk.time} на услугу «${$('bService').value}»${$('bDoctor').value?' к врачу '+$('bDoctor').value:''}. Мы позвоним для подтверждения.`;
+ $('bkForm').classList.add('sent')};
+$('bAgain').onclick=()=>{$('bkForm').reset();bk.date=null;bk.time=null;document.querySelectorAll('.day').forEach(x=>x.classList.remove('sel'));renderSlots();updSum();$('bkForm').classList.remove('sent')};
+</script>
+</body>
+</html>
